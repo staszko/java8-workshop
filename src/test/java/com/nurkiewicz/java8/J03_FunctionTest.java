@@ -49,7 +49,7 @@ public class J03_FunctionTest {
     public void shouldCallOtherClassInConsumer() {
         final Date dateMock = mock(Date.class);
 
-        final Consumer<Long> consumer = null;
+        final Consumer<Long> consumer = t -> dateMock.setTime(t.longValue());
 
         consumer.accept(1000L);
         consumer.accept(2000L);
@@ -63,7 +63,7 @@ public class J03_FunctionTest {
     public void shouldCallOtherClassInPrimitiveConsumer() {
         final Date dateMock = mock(Date.class);
 
-        final LongConsumer consumer = null;
+        final LongConsumer consumer = t -> dateMock.setTime(t);;
 
         consumer.accept(1000L);
         consumer.accept(2000L);
