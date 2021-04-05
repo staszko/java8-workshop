@@ -63,7 +63,8 @@ public class J03_FunctionTest {
     public void shouldCallOtherClassInPrimitiveConsumer() {
         final Date dateMock = mock(Date.class);
 
-        final LongConsumer consumer = t -> dateMock.setTime(t);;
+        final LongConsumer consumer = t -> dateMock.setTime(t);
+        ;
 
         consumer.accept(1000L);
         consumer.accept(2000L);
@@ -110,11 +111,11 @@ public class J03_FunctionTest {
     }
 
     private Function<Integer, Double> multiplyFun(double times) {
-        throw new UnsupportedOperationException("multiplyFun()");
+        return x -> x.doubleValue() * times;
     }
 
     private Function<String, Integer> createStringLenFunction() {
-        throw new UnsupportedOperationException("createStringLenFunction()");
+        return t -> t.length();
     }
 
 }
