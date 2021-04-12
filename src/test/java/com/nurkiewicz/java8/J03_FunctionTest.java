@@ -1,6 +1,5 @@
 package com.nurkiewicz.java8;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.InOrder;
 
@@ -19,7 +18,6 @@ import static org.mockito.Mockito.mock;
  * - Turning Function, Supplier and Producer into lambda
  * - Method references (method, static method, constructor)
  */
-@Ignore
 public class J03_FunctionTest {
 
     @Test
@@ -38,7 +36,7 @@ public class J03_FunctionTest {
 
     @Test
     public void shouldDecideIfNegative() {
-        final Predicate<Double> isNegative = t -> Double.valueOf(0d).compareTo(t) < 0;
+        final Predicate<Double> isNegative = t -> Double.valueOf(0d).compareTo(t) > 0;
 
         assertThat(isNegative.test(3.0)).isFalse();
         assertThat(isNegative.test(0.0)).isFalse();
